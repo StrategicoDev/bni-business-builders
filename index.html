@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BNI Business Builders – Power Team Seat Sheet</title>
+  <style>
+    :root{
+      --bni-red:#c8102e;
+      --bni-red-dark:#a50d24;
+      --ink:#111827;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f6f7fb;
+      --border:#e5e7eb;
+      --ok:#16a34a;
+      --warn:#f59e0b;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+    }
+    header{
+      background:linear-gradient(90deg, var(--bni-red) 0%, var(--bni-red-dark) 100%);
+      color:#fff;
+      padding:18px 16px;
+      border-bottom:4px solid rgba(255,255,255,.18);
+    }
+    .wrap{max-width:1080px;margin:0 auto;padding:18px 16px}
+    .brand{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    }
+    .brand img{
+      width:92px; height:92px; object-fit:contain;
+      background:#fff; border-radius:16px; padding:8px;
+      box-shadow:0 10px 20px rgba(0,0,0,.15);
+    }
+    .brand h1{margin:0;font-size:26px;line-height:1.15}
+    .brand .sub{margin-top:6px;color:rgba(255,255,255,.9);font-weight:600}
+    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .pill{
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.22);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:12px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+      box-shadow:0 6px 16px rgba(17,24,39,.06);
+    }
+    .card h2{margin:0 0 6px 0;font-size:18px}
+    .goal{color:var(--muted);margin:0 0 12px 0}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:12px;
+      border:1px solid var(--border);
+    }
+    th, td{padding:10px 10px; border-bottom:1px solid var(--border); vertical-align:middle}
+    th{
+      background:#fafafa;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      color:var(--muted);
+      text-align:left;
+    }
+    tr:last-child td{border-bottom:none}
+    .seat{
+      font-weight:700;
+    }
+    .optional{
+      font-weight:700;
+      color:var(--warn);
+      border:1px solid rgba(245,158,11,.35);
+      background:rgba(245,158,11,.10);
+      padding:2px 8px;
+      border-radius:999px;
+      font-size:12px;
+      margin-left:8px;
+      white-space:nowrap;
+    }
+    .checks{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .checks label{
+      display:flex; gap:6px; align-items:center;
+      font-weight:600; font-size:13px; color:var(--ink);
+    }
+    input[type="checkbox"]{width:16px;height:16px;accent-color:var(--bni-red)}
+    input[type="text"]{
+      width:100%;
+      padding:10px 10px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      font-size:14px;
+      outline:none;
+    }
+    input[type="text"]:focus{border-color:rgba(200,16,46,.55); box-shadow:0 0 0 3px rgba(200,16,46,.12)}
+    .topbar{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end; justify-content:space-between;
+      margin-top:16px;
+    }
+    .box{
+      flex: 1 1 520px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:12px;
+      box-shadow:0 6px 16px rgba(17,24,39,.06);
+    }
+    .box h3{margin:0 0 6px 0; font-size:14px}
+    .box p{margin:0; color:var(--muted); font-size:13px; line-height:1.35}
+    .actions{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    button{
+      border:none;
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:800;
+      cursor:pointer;
+      background:var(--bni-red);
+      color:#fff;
+      box-shadow:0 10px 20px rgba(200,16,46,.18);
+    }
+    button.secondary{
+      background:#111827;
+      box-shadow:0 10px 20px rgba(17,24,39,.12);
+    }
+    button.ghost{
+      background:#fff;
+      color:var(--ink);
+      border:1px solid var(--border);
+      box-shadow:none;
+    }
+    .statusline{
+      margin-top:10px;
+      font-size:13px;
+      color:var(--muted);
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid var(--border);
+      background:#fff;
+    }
+    .dot{width:9px;height:9px;border-radius:999px;background:var(--muted)}
+    .dot.ok{background:var(--ok)}
+    .dot.warn{background:var(--warn)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    footer{padding:30px 0; color:var(--muted); font-size:12px}
+    @media print{
+      header{padding:10px 12px}
+      .wrap{padding:10px 12px}
+      .topbar, .actions, #tokenRow, #helpCard {display:none !important}
+      body{background:#fff}
+      .card, .box{box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <img src="logo.png" alt="BNI Business Builders logo" />
+      <div>
+        <h1>BNI Business Builders</h1>
+        <div class="sub">Power Team Seat Sheet • Clockwork ACDC (Accumulation → Conversion → Delivery → Collection)</div>
+        <div class="pillrow">
+          <div class="pill">Referrals</div>
+          <div class="pill">Collaboration</div>
+          <div class="pill">Results</div>
+          <div class="pill">GROW • SCALE • SUCCEED</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="topbar">
+    <div class="box" id="helpCard">
+      <h3>How this stays in sync (important)</h3>
+      <p>
+        GitHub Pages is static, so to keep <b>one shared</b> sheet for everyone, this page reads/writes a single
+        <span class="mono">seats.json</span> file in the repo using the GitHub API.
+        Each person who will update the sheet should paste a <b>GitHub token</b> with access to this repo.
+        If no token is provided, the page still loads the shared sheet, but changes won't be saved for others.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>Repository settings</h3>
+      <p>Update these values in the <span class="mono">CONFIG</span> section in the code if needed.</p>
+      <div class="statusline">
+        <span class="badge"><span class="dot" id="syncDot"></span><span id="syncText">Loading…</span></span>
+        <span class="badge"><span class="mono" id="repoLabel">owner/repo@branch</span></span>
+        <span class="badge"><span class="mono" id="pathLabel">path</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="box" id="tokenRow" style="margin-top:14px;">
+    <h3>GitHub token (needed to save shared changes)</h3>
+    <p style="margin-bottom:10px;">
+      Paste a fine‑grained Personal Access Token with <b>Contents: Read & Write</b> on this repository.
+      It is stored only in your browser (localStorage).
+    </p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <input id="tokenInput" type="password" placeholder="ghp_… or github_pat_…" style="flex:1 1 520px;" />
+      <div class="actions">
+        <button class="ghost" id="saveTokenBtn" type="button">Save token</button>
+        <button class="ghost" id="clearTokenBtn" type="button">Clear token</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" id="sections"></div>
+
+  <div class="box" style="margin-top:14px;">
+    <h3>Referral statement</h3>
+    <p id="referralStatement"></p>
+  </div>
+
+  <div class="topbar" style="margin-top:14px;">
+    <div class="box">
+      <h3>Team rules</h3>
+      <ul id="rulesList" style="margin:10px 0 0 18px; color:var(--muted);"></ul>
+    </div>
+    <div class="box">
+      <h3>Actions</h3>
+      <p>Use <b>Save to GitHub</b> after updates so everyone sees the same sheet.</p>
+      <div class="actions" style="margin-top:10px;">
+        <button id="saveBtn" type="button">Save to GitHub</button>
+        <button class="secondary" id="reloadBtn" type="button">Reload shared sheet</button>
+        <button class="ghost" id="resetBtn" type="button">Reset to defaults (local)</button>
+      </div>
+      <div class="statusline">
+        <span class="badge"><span class="dot" id="dirtyDot"></span><span id="dirtyText">No unsaved changes</span></span>
+        <span class="badge"><span class="mono" id="updatedLabel">Updated: —</span></span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Tip: Print this page (Ctrl/Cmd+P) for a one‑page chapter handout.
+  </footer>
+</main>
+
+<script>
+/** =========================
+ *  CONFIG (EDIT THESE)
+ *  ========================= */
+const CONFIG = {
+  owner: "YOUR_GITHUB_OWNER_OR_ORG",
+  repo:  "YOUR_REPO_NAME",
+  branch:"main",
+  // Keep seats.json next to index.html OR set a subfolder like "data/seats.json"
+  path:  "seats.json"
+};
+
+/** =========================
+ *  State
+ *  ========================= */
+let shared = null;       // current data object
+let originalJson = "";   // to detect dirty changes
+let fileSha = null;      // GitHub contents SHA (needed for update)
+let dirty = false;
+
+const els = {
+  sections: document.getElementById("sections"),
+  referralStatement: document.getElementById("referralStatement"),
+  rulesList: document.getElementById("rulesList"),
+  saveBtn: document.getElementById("saveBtn"),
+  reloadBtn: document.getElementById("reloadBtn"),
+  resetBtn: document.getElementById("resetBtn"),
+  updatedLabel: document.getElementById("updatedLabel"),
+  syncDot: document.getElementById("syncDot"),
+  syncText: document.getElementById("syncText"),
+  dirtyDot: document.getElementById("dirtyDot"),
+  dirtyText: document.getElementById("dirtyText"),
+  repoLabel: document.getElementById("repoLabel"),
+  pathLabel: document.getElementById("pathLabel"),
+  tokenInput: document.getElementById("tokenInput"),
+  saveTokenBtn: document.getElementById("saveTokenBtn"),
+  clearTokenBtn: document.getElementById("clearTokenBtn"),
+};
+
+function setSync(state, text){
+  els.syncText.textContent = text;
+  els.syncDot.className = "dot " + (state === "ok" ? "ok" : (state === "warn" ? "warn" : ""));
+}
+function setDirty(isDirty){
+  dirty = isDirty;
+  els.dirtyText.textContent = isDirty ? "Unsaved changes" : "No unsaved changes";
+  els.dirtyDot.className = "dot " + (isDirty ? "warn" : "");
+}
+function nowIso(){
+  return new Date().toISOString().replace(".000","").replace("Z","Z");
+}
+function getToken(){
+  return localStorage.getItem("bni_bb_github_token") || "";
+}
+function setToken(t){
+  localStorage.setItem("bni_bb_github_token", t);
+}
+function clearToken(){
+  localStorage.removeItem("bni_bb_github_token");
+}
+
+/** =========================
+ *  GitHub helpers
+ *  ========================= */
+function rawUrl(){
+  const cacheBust = Date.now();
+  return `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${CONFIG.path}?v=${cacheBust}`;
+}
+function apiUrl(){
+  return `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.path}`;
+}
+async function githubFetch(url, opts = {}){
+  const token = getToken();
+  const headers = Object.assign(
+    {"Accept":"application/vnd.github+json"},
+    opts.headers || {}
+  );
+  if(token) headers["Authorization"] = `Bearer ${token}`;
+  return fetch(url, Object.assign({}, opts, {headers}));
+}
+
+/** =========================
+ *  Load / Render
+ *  ========================= */
+async function loadShared(){
+  els.repoLabel.textContent = `${CONFIG.owner}/${CONFIG.repo}@${CONFIG.branch}`;
+  els.pathLabel.textContent = CONFIG.path;
+
+  setSync("", "Loading shared sheet…");
+  fileSha = null;
+
+  // Try anonymous raw load first (works without token)
+  try{
+    const r = await fetch(rawUrl(), {cache:"no-store"});
+    if(!r.ok) throw new Error("Raw load failed: " + r.status);
+    const data = await r.json();
+    shared = data;
+    originalJson = JSON.stringify(shared);
+    setDirty(false);
+    renderAll();
+    setSync("ok", "Loaded shared sheet");
+    els.updatedLabel.textContent = "Updated: " + (shared?.meta?.updated_utc || "—");
+  }catch(e){
+    console.warn(e);
+    setSync("warn", "Could not load shared sheet (check CONFIG / file path)");
+    // fallback to embedded default (very small)
+    shared = {
+      meta:{title:"BNI Business Builders", tagline:"GROW • SCALE • SUCCEED", updated_utc:"—"},
+      sections:[],
+      rules:[],
+      referral_statement:""
+    };
+    originalJson = JSON.stringify(shared);
+    renderAll();
+  }
+
+  // If token exists, get SHA via API so we can save later
+  const token = getToken();
+  if(token){
+    try{
+      const r2 = await githubFetch(apiUrl());
+      if(r2.ok){
+        const j = await r2.json();
+        fileSha = j.sha;
+      }
+    }catch(e){
+      console.warn("Could not get SHA via API:", e);
+    }
+  }
+}
+
+function renderAll(){
+  els.sections.innerHTML = "";
+  if(!shared) return;
+
+  // Sections
+  for(const section of (shared.sections || [])){
+    const card = document.createElement("section");
+    card.className = "card";
+
+    const h = document.createElement("h2");
+    h.textContent = section.title || "";
+    card.appendChild(h);
+
+    const g = document.createElement("p");
+    g.className = "goal";
+    g.textContent = "Goal: " + (section.goal || "");
+    card.appendChild(g);
+
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    thead.innerHTML = `
+      <tr>
+        <th style="width:36%;">Seat</th>
+        <th style="width:28%;">Status</th>
+        <th style="width:36%;">Name (person / company)</th>
+      </tr>
+    `;
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+
+    for(const seat of (section.seats || [])){
+      const tr = document.createElement("tr");
+
+      const tdSeat = document.createElement("td");
+      tdSeat.innerHTML = `<div class="seat">${escapeHtml(seat.seat || "")}${seat.optional ? `<span class="optional">optional</span>`:""}</div>`;
+      tr.appendChild(tdSeat);
+
+      const tdChecks = document.createElement("td");
+      const wrap = document.createElement("div");
+      wrap.className = "checks";
+
+      wrap.appendChild(makeCheck(seat, "identified", "Identified"));
+      wrap.appendChild(makeCheck(seat, "invited", "Invited"));
+      wrap.appendChild(makeCheck(seat, "joined", "Joined"));
+
+      tdChecks.appendChild(wrap);
+      tr.appendChild(tdChecks);
+
+      const tdName = document.createElement("td");
+      const inp = document.createElement("input");
+      inp.type = "text";
+      inp.value = seat.name || "";
+      inp.placeholder = "Add name / company…";
+      inp.addEventListener("input", () => {
+        seat.name = inp.value;
+        markDirty();
+      });
+      tdName.appendChild(inp);
+      tr.appendChild(tdName);
+
+      tbody.appendChild(tr);
+    }
+
+    table.appendChild(tbody);
+    card.appendChild(table);
+
+    els.sections.appendChild(card);
+  }
+
+  // Referral statement + rules
+  els.referralStatement.textContent = shared.referral_statement || "";
+  els.rulesList.innerHTML = "";
+  for(const rule of (shared.rules || [])){
+    const li = document.createElement("li");
+    li.textContent = rule;
+    els.rulesList.appendChild(li);
+  }
+}
+
+function makeCheck(seat, key, label){
+  const id = `${seat.id}_${key}`;
+  const lab = document.createElement("label");
+  const cb = document.createElement("input");
+  cb.type = "checkbox";
+  cb.checked = !!seat[key];
+  cb.id = id;
+  cb.addEventListener("change", () => {
+    seat[key] = cb.checked;
+    // Helpful: if Joined is checked, it implies Identified+Invited (common workflow)
+    if(key === "joined" && cb.checked){
+      seat.identified = true;
+      seat.invited = true;
+    }
+    markDirty();
+    renderAll(); // re-render to sync implied states visually
+  });
+  const span = document.createElement("span");
+  span.textContent = label;
+  lab.appendChild(cb);
+  lab.appendChild(span);
+  return lab;
+}
+
+function markDirty(){
+  if(!shared) return;
+  const current = JSON.stringify(shared);
+  const isDirty = (current !== originalJson);
+  setDirty(isDirty);
+}
+
+function escapeHtml(str){
+  return (str || "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+/** =========================
+ *  Save to GitHub (shared)
+ *  ========================= */
+async function saveToGitHub(){
+  const token = getToken();
+  if(!token){
+    alert("To save for everyone, paste a GitHub token (Contents: Read & Write) for this repo.");
+    return;
+  }
+  setSync("", "Saving to GitHub…");
+
+  // Ensure we have the latest SHA
+  try{
+    const r0 = await githubFetch(apiUrl());
+    if(!r0.ok){
+      const t = await r0.text();
+      console.error(t);
+      alert("Could not access the repo file via GitHub API. Check CONFIG and token permissions.");
+      setSync("warn","Save failed");
+      return;
+    }
+    const j0 = await r0.json();
+    fileSha = j0.sha;
+  }catch(e){
+    console.error(e);
+  }
+
+  // Update meta timestamp
+  shared.meta = shared.meta || {};
+  shared.meta.updated_utc = nowIso();
+
+  const jsonStr = JSON.stringify(shared, null, 2);
+  const contentB64 = btoa(unescape(encodeURIComponent(jsonStr)));
+
+  const body = {
+    message: `Update Business Builders seat sheet (${new Date().toLocaleString()})`,
+    content: contentB64,
+    sha: fileSha,
+    branch: CONFIG.branch
+  };
+
+  try{
+    const r = await githubFetch(apiUrl(), {
+      method:"PUT",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify(body)
+    });
+
+    if(!r.ok){
+      const txt = await r.text();
+      console.error(txt);
+      alert("Save failed. Most common causes: token lacks write permission, wrong owner/repo/path, or branch mismatch.");
+      setSync("warn","Save failed");
+      return;
+    }
+
+    const j = await r.json();
+    fileSha = j?.content?.sha || fileSha;
+    originalJson = JSON.stringify(shared);
+    setDirty(false);
+    els.updatedLabel.textContent = "Updated: " + shared.meta.updated_utc;
+    setSync("ok","Saved (shared)");
+  }catch(e){
+    console.error(e);
+    alert("Save failed due to a network or permission error.");
+    setSync("warn","Save failed");
+  }
+}
+
+/** =========================
+ *  Wire up UI
+ *  ========================= */
+els.saveBtn.addEventListener("click", saveToGitHub);
+els.reloadBtn.addEventListener("click", loadShared);
+els.resetBtn.addEventListener("click", async () => {
+  if(!confirm("Reset the sheet in your browser to the last loaded shared version? (This does not overwrite GitHub)")) return;
+  await loadShared();
+});
+
+els.saveTokenBtn.addEventListener("click", () => {
+  const t = els.tokenInput.value.trim();
+  if(!t){ alert("Paste a token first."); return; }
+  setToken(t);
+  els.tokenInput.value = "";
+  alert("Token saved in this browser. You can now Save to GitHub.");
+  loadShared();
+});
+
+els.clearTokenBtn.addEventListener("click", () => {
+  clearToken();
+  alert("Token cleared from this browser.");
+  loadShared();
+});
+
+// Pre-fill token box indicator (not the token itself)
+if(getToken()){
+  els.tokenInput.placeholder = "Token is saved in this browser (you can replace it)…";
+}
+
+// boot
+loadShared();
+</script>
+</body>
+</html>

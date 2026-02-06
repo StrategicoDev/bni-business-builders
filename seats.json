@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "title": "BNI Business Builders",
+    "tagline": "GROW \u2022 SCALE \u2022 SUCCEED",
+    "updated_utc": "2026-02-06T12:31:17.775317Z"
+  },
+  "sections": [
+    {
+      "key": "accumulation",
+      "title": "A) ACCUMULATION (Lead Generation & Visibility)",
+      "goal": "Get the right leads consistently.",
+      "seats": [
+        {
+          "id": "acc_digital_marketing",
+          "seat": "Digital Marketing / Lead Generation Specialist",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "acc_branding",
+          "seat": "Branding / Graphic Design",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "acc_website",
+          "seat": "Website / Funnel Builder",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "acc_social",
+          "seat": "Social Media / Content Marketing",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "acc_pr",
+          "seat": "PR / Media / Communications",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "acc_events",
+          "seat": "Networking / Events / Public Speaking Coach",
+          "optional": true,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        }
+      ]
+    },
+    {
+      "key": "conversion",
+      "title": "B) CONVERSION (Sales & Closing)",
+      "goal": "Turn leads into paying clients.",
+      "seats": [
+        {
+          "id": "con_strategy",
+          "seat": "Business Coach / Business Strategist",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "con_sales",
+          "seat": "Sales Coach / Sales Trainer",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "con_crm",
+          "seat": "CRM / Sales Automation Specialist",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "con_copy",
+          "seat": "Copywriter (Sales Copy / Proposals / Email Sequences)",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "con_hr",
+          "seat": "HR / Recruitment Specialist (capacity = conversion)",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        }
+      ]
+    },
+    {
+      "key": "delivery",
+      "title": "C) DELIVERY (Operations & Execution)",
+      "goal": "Deliver consistently and scale without chaos.",
+      "seats": [
+        {
+          "id": "del_ops",
+          "seat": "Operations Consultant / Systems Builder",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "del_pm",
+          "seat": "Project Management Specialist",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "del_it",
+          "seat": "IT Support / Managed Services",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "del_automation",
+          "seat": "Automation Specialist (Zapier/Make/n8n/Power Automate)",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "del_training",
+          "seat": "Training / Facilitation / Change Management",
+          "optional": true,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        }
+      ]
+    },
+    {
+      "key": "collection",
+      "title": "D) COLLECTION (Cashflow, Legal & Financial Control)",
+      "goal": "Improve profitability, cashflow, and financial stability.",
+      "seats": [
+        {
+          "id": "col_accountant",
+          "seat": "Accountant",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "col_bookkeeper",
+          "seat": "Bookkeeper",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "col_cfo",
+          "seat": "Fractional CFO / Financial Manager",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "col_legal",
+          "seat": "Commercial Attorney (contracts, disputes, risk)",
+          "optional": false,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "col_debt",
+          "seat": "Debt Collection / Credit Control",
+          "optional": true,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        },
+        {
+          "id": "col_insurance",
+          "seat": "Business Insurance Specialist",
+          "optional": true,
+          "name": "",
+          "identified": false,
+          "invited": false,
+          "joined": false
+        }
+      ]
+    }
+  ],
+  "rules": [
+    "Weekly referrals + introductions",
+    "Monthly ACDC seat check (missing seats)",
+    "Each member brings 1 guest per quarter",
+    "Collaboration > competition",
+    "Results first: measurable outcomes for clients"
+  ],
+  "referral_statement": "We help business owners grow and scale by improving their entire business pipeline \u2014 from lead generation to cashflow."
+}
