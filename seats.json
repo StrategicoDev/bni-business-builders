@@ -2,7 +2,7 @@
   "meta": {
     "title": "BNI Business Builders",
     "tagline": "GROW • SCALE • SUCCEED",
-    "updated_utc": "2026-02-06T12:50:58.022Z"
+    "updated_utc": "2026-02-06T12:53:12.283Z"
   },
   "sections": [
     {
@@ -154,7 +154,7 @@
           "id": "del_automation",
           "seat": "Automation Specialist (Zapier/Make/n8n/Power Automate)",
           "optional": false,
-          "name": "CP van Vuuren",
+          "name": "",
           "identified": true,
           "invited": true,
           "joined": true
