@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "BNI Business Builders",
-    "tagline": "GROW \u2022 SCALE \u2022 SUCCEED",
-    "updated_utc": "2026-02-06T12:31:17.775317Z"
+    "tagline": "GROW • SCALE • SUCCEED",
+    "updated_utc": "2026-02-06T12:50:58.022Z"
   },
   "sections": [
     {
@@ -154,10 +154,10 @@
           "id": "del_automation",
           "seat": "Automation Specialist (Zapier/Make/n8n/Power Automate)",
           "optional": false,
-          "name": "",
-          "identified": false,
-          "invited": false,
-          "joined": false
+          "name": "CP van Vuuren",
+          "identified": true,
+          "invited": true,
+          "joined": true
         },
         {
           "id": "del_training",
@@ -239,5 +239,5 @@
     "Collaboration > competition",
     "Results first: measurable outcomes for clients"
   ],
-  "referral_statement": "We help business owners grow and scale by improving their entire business pipeline \u2014 from lead generation to cashflow."
+  "referral_statement": "We help business owners grow and scale by improving their entire business pipeline — from lead generation to cashflow."
 }
